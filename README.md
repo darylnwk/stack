@@ -21,6 +21,13 @@ func New() *Stack
 ```
 New initialises a new Stack
 
+#### func (*Stack) Peek
+
+```go
+func (s *Stack) Peek() interface{}
+```
+Peek returns the element at the top of the stack
+
 #### func (*Stack) Pop
 
 ```go

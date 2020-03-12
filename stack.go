@@ -15,6 +15,18 @@ func New() *Stack {
 	}
 }
 
+// Peek returns the element at the top of the stack
+func (s *Stack) Peek() interface{} {
+	s.mutex.Lock()
+	defer s.mutex.Unlock()
+
+	if len(s.elements) == 0 {
+		return nil
+	}
+
+	return s.elements[len(s.elements)-1]
+}
+
 // Push adds elements to the stack
 func (s *Stack) Push(elements ...interface{}) {
 	s.mutex.Lock()
